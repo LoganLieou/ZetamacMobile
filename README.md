@@ -15,5 +15,5 @@ Alot of these features are for competitive zetamac, at the moment zetamac itself
 
 ## Screenshots / Gameplay
 
-![](./assets/game.PNG)
-![](./assets/score.PNG)
+![](./assets/homepage.png)
+![](./assets/gamepage.png)
