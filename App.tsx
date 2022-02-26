@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import Game from './components/Game'
+import Score from './components/Score'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  // state
+  const [counter, setCounter] = useState<number>(0);
+  const [playing, setPlaying] = useState<boolean>(false);
+  const [delay, setDelay] = useState<number>(30);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (playing) {
+    return (
+      <Game setPlaying={setPlaying} counter={counter} setCounter={setCounter} delay={delay}/>
+    );
+  } else {
+    return (
+      <Score delay={delay} counter={counter} setCounter={setCounter}
+       setPlaying={setPlaying} setDelay={setDelay}/>
+    );
+  }
+}
